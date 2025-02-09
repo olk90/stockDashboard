@@ -9,8 +9,7 @@ from taipy import Config
 # machine learning imports
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
-from tensorflow.keras import models
-from tensorflow.keras import layers
+from tensorflow.python.keras import models, layers
 # data imports
 import datetime
 import plotly.graph_objects as go
