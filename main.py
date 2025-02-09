@@ -33,7 +33,7 @@ company_data = pd.read_csv("data/sp500_companies.csv")
 
 # contry names and icons [for slider]
 country_names = company_data["Country"].unique().tolist()
-country_names = [(i, Icon("images/flags/" + i + ".png", i)) for i in country_names]
+country_names = [(i, Icon("img/flags/" + i + ".png", i)) for i in country_names]
 
 # company names [for slider]
 company_names = company_data[["Symbol", "Shortname"]
@@ -67,7 +67,7 @@ with tgb.Page() as page:
     # create horizontal group of elements
     # aligned to the center
     with tgb.part("text-center"):
-        tgb.image("images/icons/logo.png", width="10vw")
+        tgb.image("img/icons/logo.png", width="10vw")
         tgb.text(
             "# S&P 500 Stock Value Over Time",
             mode="md"
@@ -105,26 +105,26 @@ with tgb.Page() as page:
             with tgb.layout("4 72 4 4 4 4 4 4"):
                 # company name and symbol
                 tgb.image(
-                    "images/icons/id-card.png",
+                    "img/icons/id-card.png",
                     width="3vw"
                 )
                 tgb.text("{company[-1]} | {company_data['Shortname'][company_data['Symbol'] == company[-1]].values[0]}",
                          mode="md")
                 # linear regression prediction
                 tgb.image(
-                    "images/icons/lin.png",
+                    "img/icons/lin.png",
                     width="3vw"
                 )
                 tgb.text("{lin_pred}", mode="md")
                 # KNN prediction
                 tgb.image(
-                    "images/icons/knn.png",
+                    "img/icons/knn.png",
                     width="3vw"
                 )
                 tgb.text("{knn_pred}", mode="md")
                 # RNN prediction
                 tgb.image(
-                    "images/icons/rnn.png",
+                    "img/icons/rnn.png",
                     width="3vw"
                 )
                 tgb.text("{rnn_pred}", mode="md")
